@@ -27,5 +27,5 @@ script:
   - m2*/gen_cnf.sh
   - sudo mariabackup -uroot --backup --target-dir=m2-${VERSION}/dt
   - sudo mariabackup --prepare --target-dir=m2-${VERSION}/dt
-  - sudo chown $(whoami):$(id -g) m2-${VERSION}/dt
+  - sudo chown -R $(whoami):$(id -g) m2-${VERSION}/dt
   - m2*/startup.sh && m2*/status.sh || cat m2*/dt/error.log && ls -la m2*/dt
