@@ -20,7 +20,7 @@ env:
 script:
   - set +e
   - ./replant.sh m1-system
-  - m1*/install.sh ${VERSION}
+  - sudo m1*/install.sh ${VERSION}
   - sudo apt-get install mariadb-backup-${VERSION}
   - ./replant.sh m2-${VERSION}
   - ./build_or_download.sh m2
