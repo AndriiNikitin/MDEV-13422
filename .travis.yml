@@ -1,0 +1,32 @@
+language: cpp
+dist: trusty
+sudo: true
+
+addons:
+  apt:
+    packages:
+    - libaio1
+
+install:
+  - set -e
+  - mkdir ../farm
+  - git clone --depth=1 https://github.com/AndriiNikitin/mariadb-environs ../farm
+  - cd ../farm
+
+env:
+  matrix:
+    - VERSION=10.1
+    - VERSION=10.2
+script:
+  - set +e
+  - ./replant.sh m1-system
+  - m1*/install.sh ${VERSION}
+  - sudo apt-get install mariadb-backup-${VERSION}
+  - ./replant.sh m2-${VERSION}
+  - ./build_or_download.sh m2
+  - m2*/gen_cnf.sh
+  - sudo mariabackup -uroot --backup --target-dir=m2-${VERSION}/dt
+  - sudo mariabackup --prepare --target-dir=m2*/dt
+  - sudo chown $(whoami):$(id -g)
+  - m2*/startup.sh
+  - m2*/status.sh
