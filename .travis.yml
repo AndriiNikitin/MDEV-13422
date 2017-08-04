@@ -31,5 +31,5 @@ env:
     - VERSION=10.2 M7_EXTRA_OPTS='innodb_page_size=32k configure_rest_encryption=1' IMAGE=centos
 script:
   - set -e
-  - [ -z "$IMAGE" ] || bash -x -v -c MDEV-13422.sh
-  - [ ! -z "$IMAGE" ] || bash -x -v -c MDEV-13422in-docker.sh
+  - '[ -z "$IMAGE" ] || bash -x -v -c MDEV-13422.sh'
+  - '[ ! -z "$IMAGE" ] || bash -x -v -c MDEV-13422-in-docker.sh'
