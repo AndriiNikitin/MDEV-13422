@@ -6,12 +6,12 @@ services:
 env:
   matrix:
 #    - VERSION=10.1 
-#    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=8k'
+    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=8k'
 #    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=32k'
 #    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=64k'
 #    - VERSION=10.1 M7_EXTRA_OPTS=configure_rest_encryption=1
 #    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=8k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=32k'
+    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=32k'
 #    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=64k'
 #    - VERSION=10.1 M7_EXTRA_OPTS=configure_innodb_plugin=1
 #    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=8k'
