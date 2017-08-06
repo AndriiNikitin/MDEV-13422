@@ -5,30 +5,32 @@ services:
 
 env:
   matrix:
-    - VERSION=10.1
-    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=8k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=32k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='innodb_page_size=64k'
-#    - VERSION=10.1 M7_EXTRA_OPTS=configure_rest_encryption=1
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=8k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=32k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=64k'
-    - VERSION=10.1 M7_EXTRA_OPTS=configure_innodb_plugin=1
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=8k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=32k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=64k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1'
+    - M7VER=10.1
+    - M7VER=10.1 M7_EXTRA_OPTS='innodb_page_size=8k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='innodb_page_size=32k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='innodb_page_size=64k'
+#    - M7VER=10.1 M7_EXTRA_OPTS=configure_rest_encryption=1
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=8k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=32k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_rest_encryption=1 innodb_page_size=64k'
+    - M7VER=10.1 M7_EXTRA_OPTS=configure_innodb_plugin=1
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=8k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=32k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 innodb_page_size=64k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1'
 #    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=8k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=32k'
-#    - VERSION=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=64k'
-#    - VERSION=10.2 IMAGE=centos
-#    - VERSION=10.2 M7_EXTRA_OPTS=innodb_page_size=8k IMAGE=centos
-#    - VERSION=10.2 M7_EXTRA_OPTS=innodb_page_size=32k IMAGE=centos
-#    - VERSION=10.2 M7_EXTRA_OPTS=innodb_page_size=64k IMAGE=centos
-#    - VERSION=10.2 M7_EXTRA_OPTS=configure_rest_encryption=1 IMAGE=centos
-#    - VERSION=10.2 M7_EXTRA_OPTS='innodb_page_size=8k configure_rest_encryption=1' IMAGE=centos
-#    - VERSION=10.2 M7_EXTRA_OPTS='innodb_page_size=16k configure_rest_encryption=1' IMAGE=centos
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=32k'
+#    - M7VER=10.1 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=64k'
+#    - M7VER=10.2 IMAGE=centos
+#    - M7VER=10.2 M7_EXTRA_OPTS=innodb_page_size=8k IMAGE=centos
+#    - M7VER=10.2 M7_EXTRA_OPTS=innodb_page_size=32k IMAGE=centos
+#    - M7VER=10.2 M7_EXTRA_OPTS=innodb_page_size=64k IMAGE=centos
+#    - M7VER=10.2 M7_EXTRA_OPTS=configure_rest_encryption=1 IMAGE=centos
+#    - M7VER=10.2 M7_EXTRA_OPTS='innodb_page_size=8k configure_rest_encryption=1' IMAGE=centos
+#    - M7VER=10.2 M7_EXTRA_OPTS='innodb_page_size=16k configure_rest_encryption=1' IMAGE=centos
     - M7VER=10.2 M7_EXTRA_OPTS='innodb_page_size=32k configure_rest_encryption=1' IMAGE=centos
+    - M7VER=10.2.6 M7VER2=10.2 IMAGE=centos
+    - M7VER=10.1.19 M7VER2=10.2 IMAGE=centos
     - M7VER=10.1 M7VER2=10.2 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=64k' IMAGE=centos
 script:
   - '( [ "$IMAGE" != "" ] || bash -x -v MDEV-13422.sh )'
