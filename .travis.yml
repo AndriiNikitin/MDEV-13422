@@ -31,7 +31,7 @@ env:
     - M7VER=10.2 M7_EXTRA_OPTS='innodb_page_size=32k configure_rest_encryption=1' IMAGE=centos
 #    - M7VER=10.2.6 M7VER2=10.2 IMAGE=centos
     - M7VER=10.1.23 M7VER2=10.2 IMAGE=centos
-    - M7VER=10.1.19 M7VER2=10.2
+    - M7VER=10.1.21 M7VER2=10.2
     - M7VER=10.2 M7VER2=10.3
     - M7VER=10.1 M7VER2=10.3 M7_EXTRA_OPTS='configure_rest_encryption=1'
     - M7VER=10.2 M7VER2=10.3 M7_EXTRA_OPTS='configure_rest_encryption=1'
