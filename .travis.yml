@@ -33,8 +33,8 @@ env:
     - M7VER=10.1.23 M7VER2=10.2 IMAGE=centos
     - M7VER=10.1.19 M7VER2=10.2
     - M7VER=10.2 M7VER2=10.3
-    - M7VER=10.1 M7VER2=10.3 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1'
-    - M7VER=10.2 M7VER2=10.3 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1'
+    - M7VER=10.1 M7VER2=10.3 M7_EXTRA_OPTS='configure_rest_encryption=1'
+    - M7VER=10.2 M7VER2=10.3 M7_EXTRA_OPTS='configure_rest_encryption=1'
     - M7VER=10.1 M7VER2=10.2 M7_EXTRA_OPTS='configure_innodb_plugin=1 configure_rest_encryption=1 innodb_page_size=64k' IMAGE=centos
 script:
   - '( [ "$IMAGE" != "" ] || bash -x -v MDEV-13422.sh )'
