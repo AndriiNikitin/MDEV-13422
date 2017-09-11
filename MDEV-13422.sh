@@ -28,6 +28,7 @@ trap onExit EXIT
 
 [ -d m0-system ] || ./replant.sh m0-system
 [ -d m1-system2 ] || ./replant.sh m1-system2
+[ -d m2-$M7VER2 ] || ./replant.sh m2-$M7VER2
 
 sudo _system/uninstall.sh || :
 sudo m0*/install.sh ${M7VER} backup
@@ -35,7 +36,6 @@ m1*/gen_cnf.sh $M7_EXTRA_OPTS
 m1*/install_db.sh
 m1*/startup.sh
 
-[ -d m2-$M7VER2 ] || ./replant.sh m2-$M7VER2
 [ -d m2-$M7VER2/build ] || ./build_or_download.sh m2
 
 m2*/gen_cnf.sh $M7_EXTRA_OPTS
