@@ -43,6 +43,9 @@ m2*/gen_cnf.sh $M7_EXTRA_OPTS
 mariabackup --defaults-file=m1-system2/my.cnf --backup --target-dir=m2-${M7VER2}/dt
 mariabackup --prepare --target-dir=m2-${M7VER2}/dt
 
+# see MDEV-13311 - 10.2+ needs to remove ib_logfile0 if its size is 0
+[ -s m2*/dt/ib_logfile0 ] || rm m2*/dt/ib_logfile0
+
 m2*/startup.sh
 m2*/status.sh
 
